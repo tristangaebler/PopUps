@@ -6,7 +6,5 @@ public class InputRunner
 	{
 		InputController myInput = new InputController();
 		myInput.start();  
-		
-		
 	}
 }
