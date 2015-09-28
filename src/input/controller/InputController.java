@@ -21,6 +21,12 @@ public class InputController
 		String temp = myPopUp.grabAnswer("You typed in your age");
 		int myAge;
 		
+		while(!isInteger(temp))
+		{
+			temp = myPopUp.grabAnswer("Type in a positive integer for your age");
+			
+		}
+		
 		if(isInteger(temp))
 		{
 			myAge = Integer.parseInt(temp);
@@ -33,7 +39,17 @@ public class InputController
 		myPopUp.showResponse("You typed "+ myAge);
 			
 		String tempWeight = myPopUp.grabAnswer("You typed in your age");
-		double myWeight = Double.parseDouble("Type in your weight");
+		double myWeight;
+		
+		if (isDouble(tempWeight))
+		{
+			myWeight = Double.parseDouble(tempWeight);
+		}
+		else
+		{
+			myWeight = -999.99;
+		}
+		
 		myPopUp.showResponse("You typed "+ myWeight);
 
 		myTestThing = new Thingy(myName, myAge, myWeight);
